@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow()
+        window?.backgroundColor = UIColor.white
+        
+        let listViewController = MVCListViewController(nibName: "ListViewController", bundle: Bundle.main)
+        let navigationController = UINavigationController.init(rootViewController: listViewController)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
